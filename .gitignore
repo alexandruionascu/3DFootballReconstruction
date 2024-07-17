@@ -3,3 +3,6 @@ lib
 bin
 .idea
 frames
+vendor
+.vscode
+.github
