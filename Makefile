@@ -43,7 +43,13 @@ else
 		# Set macOS macros
 		platform := macOS
 		CXX ?= clang++
+
+		CXX += -I/opt/homebrew/Cellar/opencv/4.9.0_9/include/opencv4
+		CXX += -I/opt/homebrew/Cellar/pcl/1.14.1/include/pcl-1.14/
+
 		linkFlags += -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL
+		linkFlags +=  -L/opt/homebrew/Cellar/opencv/4.9.0_9/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc -lopencv_videoio
+		linkFlags +=  -L/opt/homebrew/Cellar/pcl/1.14.1/lib  -lpcl_common -lpcl_io -lpcl_kdtree -lpcl_search -lpcl_filters -lpcl_sample_consensus -lpcl_features -lpcl_segmentation -lpcl_visualization
 	endif
 
 	# Set UNIX macros
